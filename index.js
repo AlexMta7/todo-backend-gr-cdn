@@ -12,10 +12,14 @@ app.listen(config.PORT, () => console.log(`Server is Listening on Port: ${config
 
 connectDatabase()
 
-// Ruta Raiz
-app.get('/', (req, res) => {
-  res.send('API is Running')
-})
+try {
+  // Ruta Raiz
+  app.get('/', (req, res) => {
+    res.send('API is Running')
+  })
 
-// Rutas de Tareas
-app.use('/api/tasks', TaskRoutes)
+  // Rutas de Tareas
+  app.use('/api/tasks', TaskRoutes)
+} catch (error) {
+  console.error(error)
+}
