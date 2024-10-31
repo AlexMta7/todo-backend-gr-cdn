@@ -2,16 +2,12 @@ import Tasks from '../models/Tasks.js'
 
 // Se guarda la información de una nueva tarea
 export const saveTask = async (data) => {
-  try {
-    const Task = {
-      title: data.title,
-      completed: data.completed,
-    }
-
-    return await Tasks.create(Task)
-  } catch (error) {
-    console.error('Error al crear la tarea', error)
+  const Task = {
+    title: data.title,
+    completed: data.completed,
   }
+
+  return await Tasks.create(Task)
 }
 
 // Se obtienen todas las tareas registradas
