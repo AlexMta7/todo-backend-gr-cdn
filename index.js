@@ -3,6 +3,7 @@ import cors from 'cors'
 import config from './config.js'
 import TaskRoutes from './src/routes/TaskRoutes.js'
 import { connectDatabase } from './src/middleware/ConnectDatabase.js'
+import { getPool } from './src/middleware/CloudSqlConnector.js'
 
 const app = express()
 app.use(cors())
@@ -11,6 +12,10 @@ app.use(express.json())
 app.listen(config.PORT, () => console.log(`Server is Listening on Port: ${config.PORT}`))
 
 connectDatabase()
+
+const pool = await getPool()
+const [rows] = await pool.query('SELECT NOW() as now')
+console.log(rows)
 
 try {
   // Ruta Raiz
