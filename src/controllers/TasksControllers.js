@@ -19,7 +19,7 @@ export const AllTasks = async (req, res) => {
   }
 }
 
-// // Get a single task
+// Get a single task
 // export const getTask = async (req, res) => {
 //   try {
 //     const task = await Task.findById(req.params.id)
