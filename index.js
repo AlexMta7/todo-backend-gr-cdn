@@ -13,9 +13,9 @@ app.listen(config.PORT, () => console.log(`Server is Listening on Port: ${config
 
 connectDatabase()
 
-const pool = await getPool()
-const [rows] = await pool.query('SELECT NOW() as now')
-console.log(rows)
+// const pool = await getPool()
+// const [rows] = await pool.query('SELECT NOW() as now')
+// console.log(rows)
 
 try {
   // Ruta Raiz

@@ -14,6 +14,8 @@ export const connectDatabase = async () => {
       INSTANCE_CONNECTION_NAME,
     } = config
 
+    console.log(`Conectando a la base de datos ${DB_NAME} en ${DB_HOST}:${DB_PORT}...`)
+
     // Opción 1: IP privada / pública / proxy TCP
     let host = DB_HOST
     let dialectOptions = {}

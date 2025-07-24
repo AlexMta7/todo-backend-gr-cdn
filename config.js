@@ -14,4 +14,5 @@ export default {
   INSTANCE_CONNECTION_NAME: process.env.INSTANCE_CONNECTION_NAME,
   DB_HOST: process.env.DB_HOST,
   DB_PORT: process.env.DB_PORT || 3306, // Puerto por defecto para MySQL
+  USE_SOCKET: process.env.USE_SOCKET || 'false',
 }
